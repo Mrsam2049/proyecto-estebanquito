@@ -1,0 +1,183 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body, #root { margin:0; padding:0; width:100%; }
+body { overflow-x: hidden; }  sin barra horizontal
+
+body {
+  margin:0;
+  background: white;                
+  padding: 0;
+  width: 100vw;
+                   
+}
+
+.inicio{
+
+  background: linear-gradient(180deg, #ffffff, #f6f7fb);
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+ 
+  text-align: left;                                 
+
+}
+
+.principal{
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  height: 100vh;     
+  display: flex;
+  align-items: center;
+  
+  
+  padding: 0;   
+  
+}
+.principal::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:0;
+  height: 140px;
+  pointer-events:none;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), #f6f7fb 100%);
+}
+.fondo-principal {
+    
+  position: absolute;
+  inset: 0;
+  background-image: url("/img/Gemini_Generated_Image_jzsfzvjzsfzvjzsf.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  
+}
+
+.contenido{
+  position:relative;
+  text-align: left;
+  color:white;
+  max-width: 700px;
+  padding: 1rem;
+}
+
+
+.barra{
+  height: 64px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  color: black; 
+}
+.marca{
+  display: flex; 
+  align-items: center; 
+  gap: 10px;
+}
+.vp-logo{ 
+  width: 28px; 
+  height: 28px; 
+  object-fit: contain; 
+}
+
+.titulo{
+  font-size: 3.4rem;
+  line-height: 1.1;
+ 
+  color: white;
+  
+}
+.subtitulo{
+  font-size: 1.25rem;
+  color: black;                                    
+  margin-bottom: 1.2rem;
+  font-weight: 700;
+}
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .9rem ;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  
+  font-weight: 600;
+  
+  cursor: pointer;
+}
+.btn-login{
+  color: #ffffff;
+  background: #6b2cff;
+  box-shadow: 0 10px 28px rgba(107, 44, 255, 0.22);
+  border-radius: 10px;
+  border-style: solid;
+  padding: 0.8rem ;
+  font-weight: 600;
+  text-decoration: none;
+}
+.btn-login:hover{ transform: translateY(-2px); }
+
+.btn-mas{
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  color:midnightblue;
+}
+.btn-mas:hover{ transform: translateY(-1px); }
+
+
+.beneficios{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem;
+}
+
+.beneficios-titulo{
+  font-size: 2.2rem;
+  margin: 2rem 0 1rem;
+  text-align: center;
+  color:black;
+}
+
+.caja-beneficios{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;                                         
+  justify-content: flex-start;
+  align-items: stretch;
+  color:black;
+}
+
+
+.tarjeta{
+  flex: 0 0 calc((100% - (2 * 1.2rem)) / 3);          
+  background: white;                                 
+  border-radius: 16px;                                
+  padding: 1.2rem;
+  border: 1px solid rgba(0,0,0,.04);
+  box-shadow: 0 8px 30px rgba(0,0,0,.06);
+
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  min-width: 0;
+}
+
+.tarjeta-img{
+  width: 90px;
+  height: auto;
+  object-fit: contain;
+}
+
+
+
+
+

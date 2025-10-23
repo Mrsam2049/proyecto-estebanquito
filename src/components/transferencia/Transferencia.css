@@ -1,0 +1,127 @@
+
+.tx{
+  min-height: 100vh;
+  background: #f6f7fb;
+  color: #0f172a;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+
+.tx__encabezado{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.tx__titulo{
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 800;
+}
+.tx__opciones{
+  display: flex; gap: .5rem; flex-wrap: wrap;
+}
+.tx__opcion{
+  padding: .5rem ;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  color: black;
+}
+.tx__opcion-contendor{
+  background: #0f172a; color: #fff; border-color: #0f172a;
+}
+
+
+.tx__formulario{
+  background: #fff;
+  border: 1px solid #eef0f3;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.06);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 1100px;
+}
+
+
+.tx__fila{
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.tx__contenedor{
+  display: flex; 
+  flex-direction: column; 
+  gap: .4rem;
+  flex: 1 1 340px;          
+  min-width: 240px;
+}
+.tx__cuenta{
+  font-weight: 700; color: #475569; font-size: .95rem;
+}
+.tx__elecciones{
+  padding: .9rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #f9fafb;
+  color: #0f172a;
+  outline: none;
+}
+
+.tx__input:focus{
+  border-color: #6b2cff;
+  box-shadow: 0 0 0 3px rgba(107,44,255,.18);
+  background: #fff;
+}
+
+
+.tx__acciones{
+  display: flex; 
+  gap: .6rem; 
+  flex-wrap: wrap;
+}
+.tx__btn{
+  padding: .9rem 1.2rem;
+  border: 0;
+  border-radius: 999px;
+  background: #111827;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+ 
+}
+.tx__btn:hover{ transform: translateY(-1px); 
+    box-shadow: 0 10px 24px rgba(0,0,0,.2); }
+.tx__btn--limpiar{
+  background: #fff; color: #111827; 
+  border: 1px solid #e5e7eb;
+}
+
+
+.tx__saldos{
+  display: flex; 
+  gap: 1rem; 
+  flex-wrap: wrap; 
+  max-width: 1100px;
+}
+.tx__saldo{
+  background: #fff;
+  border: 1px solid #eef0f3;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.06);
+  padding: 1rem 1.2rem;
+  display: flex; flex-direction: column; gap: .3rem;
+  flex: 1 1 320px; min-width: 260px;
+}
+.tx__saldo-texto{ font-size: .95rem; color: #475569; font-weight: 700; }
+.tx__saldo-cantidad{ font-size: clamp(1.2rem, 3vw, 1.8rem); font-weight: 800; }
+
+

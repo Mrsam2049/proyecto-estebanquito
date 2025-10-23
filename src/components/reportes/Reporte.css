@@ -1,0 +1,44 @@
+.rep{
+  min-height: 100vh;
+  background: #f6f7fb;
+  color: #0f172a;
+  padding: 16px;
+}
+
+.rep-titulo{ margin: 0 0 10px; font-weight: 800; }
+
+.rep-filtro{
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 12px;
+}
+.rep-filtro__eleccion{ font-weight: 700; color: #475569; }
+.rep-filtro__eleccion{
+  padding: .55rem .8rem;
+  border: 1px solid #e5e7eb; border-radius: 8px; background: #fff;
+  color:black;
+}
+
+
+.rep-tabla{ display: flex; flex-direction: column; gap: .4rem; }
+.cabeza, .fila{
+  display: grid; grid-template-columns: 180px 120px 1fr 160px;
+  gap: .6rem; align-items: center;
+}
+.cabeza{
+  font-weight: 800; color: #475569; padding: .4rem ;
+}
+.fila{
+  background: #fff; border: 1px solid #eef0f3; border-radius: 10px; padding: .6rem .7rem;
+}
+.rp-dinero{ text-align: right; }
+
+
+.pill{
+  padding: .2rem ; border-radius: 999px; font-weight: 700; font-size: .85rem;
+  background: #e5e7eb;
+}
+.pill.ingreso{ background: #dcfce7; color: green; }
+.pill.egreso { background: #fee2e2; color: red; }
+.pill.deuda  { background: #fef3c7; color: brown; }
+
+

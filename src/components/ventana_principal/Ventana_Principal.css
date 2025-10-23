@@ -1,0 +1,126 @@
+
+.vp{
+  min-height: 100vh;
+  background: whitesmoke;
+  color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.vp-barra{
+  height: 64px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+}
+.vp-marca{
+  display: flex; 
+  align-items: center; 
+  gap: 10px;
+}
+.vp-logo{ 
+  width: 28px; 
+  height: 28px; 
+  object-fit: contain; 
+}
+
+.vp-nombre{ font-weight: 700; }
+
+.vp-usuario{
+  display: flex; 
+  align-items: center; 
+  gap: 12px;
+}
+.vp-hola{ font-weight: 600; }
+.vp-cerrarsesion{
+  padding: 0.5rem;
+  border-radius: 999px;
+  background: whitesmoke;
+  cursor: pointer;
+  color:black
+}
+.vp-cerrarsesion:hover{ transform: translateY(-1px); }
+
+
+.vp-principal{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.vp-saldo{
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.vp-tarjeta{
+  flex: 1 1 calc(50% - 8px); 
+  min-width: 260px;
+  background: #1C75BC;
+  border: 1px solid black;
+  border-radius: 16px;
+  box-shadow: 0 10px 28px gray;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color:white;
+}
+.vp-titulo{
+  font-size: 14px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: .2px;
+  text-transform: uppercase;
+}
+.vp-dinero{
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+
+
+.vp-acciones{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 6px;
+}
+.vp-accion{
+  flex: 0 0 calc((100% - 32px) / 3); 
+  min-width: 260px;
+  background: #ffffff;
+  border: 1px solid #eef0f3;
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.05);
+  padding: 18px;
+  text-decoration: none;
+  color: inherit;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform .06s ease, box-shadow .2s ease;
+}
+.vp-accion:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.08);
+}
+.vp-accion img{
+  width: 100px; height: 100px; object-fit: contain;
+}
+.vp-accion h3{
+  margin: 6px 0 0;
+  font-size: 1.05rem;
+}
+.vp-accion p{ color: #475569; margin: 0; }
+
+

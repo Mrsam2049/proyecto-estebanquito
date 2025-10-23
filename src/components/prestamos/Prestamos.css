@@ -1,0 +1,85 @@
+
+
+.pr{
+  min-height: 100vh;
+  background: #f6f7fb;
+  color: #0f172a;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items:center;
+  
+}
+
+.pr-titulo{
+  
+  font-weight: 800;
+}
+
+.pr-tarjeta{
+  background: #fff;
+  border: 1px solid #eef0f3;
+  border-radius: 14px;
+  
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 900px;
+  width: 100%;
+}
+
+.pr-subtitulo{
+  margin: 6px;
+  font-size: 1.05rem;
+}
+
+.pr-texto{
+  font-weight: 700;
+  color: #475569;
+}
+
+.pr-opciones{
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #f9fafb;
+  outline: none;
+}
+.pr-opciones:focus{
+  border-color: #6b2cff;
+
+  background: #fff;
+}
+
+.pr-acciones{
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+.pr-btn{
+  padding: 1.1rem;
+  border: 0;
+  border-radius: 999px;
+  background: #111827;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+.pr-btn--light{
+  background: #fff;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+}
+
+.pr-fila{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+
