@@ -26,6 +26,7 @@
   height: 28px; 
   object-fit: contain; 
 }
+.vp-Ncuenta{ font-weight: 700; }
 
 .vp-nombre{ font-weight: 700; }
 
@@ -102,13 +103,10 @@
   border-radius: 16px;
   box-shadow: 0 10px 28px rgba(0,0,0,.05);
   padding: 18px;
-  text-decoration: none;
-  color: inherit;
-
   display: flex;
   flex-direction: column;
   gap: 8px;
-  transition: transform .06s ease, box-shadow .2s ease;
+  
 }
 .vp-accion:hover{
   transform: translateY(-2px);

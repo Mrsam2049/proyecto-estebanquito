@@ -5,17 +5,41 @@ import "./Login.css";
 
 function Login(){
   const navigate = useNavigate();
+    
   const [email, setEmail] = useState("");
-  const [pass,  setPass]  = useState("");
+  const [pass, setPass] = useState("");
+  const [user, setUser] = useState({});
+  
 
-  const validarUsuario = () => {
-    if (email.trim() === "samuel213417@gmail.com") {
-      navigate("/Ventana_Principal", { state: { nombre: email } });
-    } else {
-      alert("Usuario o contraseña incorrectos");
+  const validarUsuario = async () => {
+    try {
+      const res = await fetch("http://localhost:3000/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: email,
+          password: pass,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        alert(data.message || "Credenciales inválidas");
+        return;
+      }
+
+      
+      localStorage.setItem("isAuth", "true");
+      localStorage.setItem("nombre", data.user.nombre);
+
+      
+      navigate("/ventana_principal", { state: { nombre: data.user.nombre } });
+    } catch (error) {
+      console.error(error);
+      alert("Error de red");
     }
   };
-
   return (
     <div className="login">
       <div className="login-cuadro">
@@ -27,7 +51,6 @@ function Login(){
           className="login-input"
           type="email"
           placeholder="Ingresa tu correo electrónico"
-          value={email}
           onChange={(e) => setEmail(e.target.value)}
           autoComplete="email"
         />
@@ -38,7 +61,6 @@ function Login(){
           className="login-input"
           type="password"
           placeholder="Ingresa tu contraseña"
-          value={pass}
           onChange={(e) => setPass(e.target.value)}
           autoComplete="current-password"
         />
@@ -46,10 +68,14 @@ function Login(){
         <button type="button" className="login-btn" onClick={validarUsuario}>
           Iniciar sesión
         </button>
+       <div>{user.nombre}</div>
+       <div>{user.edad}</div>
         <p className="login-hint">
           ¿No tienes cuenta? <Link to="/registro" className="login-link">Registro</Link>
         </p>
+        
       </div>
+      
     </div>
   );
 }

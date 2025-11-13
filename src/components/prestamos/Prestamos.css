@@ -46,6 +46,8 @@
   border-radius: 10px;
   background: #f9fafb;
   outline: none;
+  color: #475569;
+
 }
 .pr-opciones:focus{
   border-color: #6b2cff;

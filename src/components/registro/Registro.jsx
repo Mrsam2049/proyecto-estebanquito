@@ -7,20 +7,54 @@ function Registro() {
   const [nombre, setNombre] = useState("");
   const [email,  setEmail]  = useState("");
   const [pass,   setPass]   = useState("");
+  const [pass2, setPass2] = useState("");  
+  const [tipoCuenta, setTipoCuenta] = useState(""); 
 
-  const onSubmit = () => {
+  const onSubmit = async () => {
     if (!nombre.trim() || !email.trim() || !pass.trim()) {
       alert("Completa nombre, correo y contraseña");
       return;
     }
-    if (pass.length < 6) {
+        if (pass.length < 6) {
       alert("La contraseña debe tener mínimo 6 caracteres");
       return;
     }
+    if (pass !== pass2) {
+      alert("Las contraseñas no coinciden");
+      return;
+    }
     
-    alert("Registro exitoso. Inicia sesión para continuar.");
-    navigate("/");
+    if (!["ahorros", "corriente"].includes(tipoCuenta)) {
+      alert("Selecciona un tipo de cuenta válido");
+      return;
+    }
+
+    try {
+      const res = await fetch("http://localhost:3000/api/usuarios", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nombre: nombre,
+          email: email,
+          password: pass,
+          tipo_cuenta: tipoCuenta,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        alert("Registro exitoso. Inicia sesión para continuar.");
+        navigate("/");
+      } else {
+        alert(data.message || "Error al registrar");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Error de red");
+    }
   };
+
 
 
   const onKeyDown = (e) => {
@@ -67,6 +101,28 @@ function Registro() {
           minLength={6}
           onKeyDown={onKeyDown}
         />
+        <label className="texto" htmlFor="pass2">Confirmar contraseña</label>
+        <input
+          id="pass2"
+          className="registro-input"
+          type="password"
+          placeholder="Repite la contraseña"
+          value={pass2}
+          onChange={(e) => setPass2(e.target.value)}
+          autoComplete="new-password"
+          minLength={6}
+          onKeyDown={onKeyDown}
+        />
+        <label className="texto" htmlFor="tipo">Tipo de cuenta</label>
+        <select
+          id="tipo"
+          className="registro-input"
+          value={tipoCuenta}
+          onChange={(e) => setTipoCuenta(e.target.value)}
+        >
+          <option value="ahorros">Cuenta de ahorros</option>
+          <option value="corriente">Cuenta corriente</option>
+        </select>
 
         <button type="button" className="registro-btn" onClick={onSubmit}>
           Registrarme
